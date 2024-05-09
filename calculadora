@@ -1,0 +1,60 @@
+import os
+os.system('cls')
+
+print('Ciência da Computação, 1º Semestre, 2024.')
+
+print('\nIntegrantes do grupo: Gabriel de França Gaudêncio; Luana Aparecida Messias Ribeiro; Otavio Alves Cruz de Oliveira Santos e Victoria Andreozzi Gualano.')
+
+print('\nCalculadora de Conversão: Conversões das bases binárias, octal e hexadecimal para a base decimal.')
+
+ 
+resp = 's'
+while resp == 's' or resp == "S":
+    n = 0
+    total = 0
+    tipo = input('\nDigite qual o formato do número será realizado a conversão para decimal: \n [b] Binário \n [o] Octal \n [h] Hexadecimal \n')
+    tipo = tipo.lower()
+    num = input("Digite o número que deseja converter: ")
+
+#Conversão de binário para decimal:
+    
+    while tipo == 'b':
+        for d in num[:: -1]:
+            dec = int(d) *(2 ** n)
+            n = n + 1
+            total = total + dec
+        tipo = "acabou"
+        print(total)
+
+#Conversão de octal para decimal:
+
+    while tipo == 'o':
+        for d in num[:: -1]:
+                dec = int(d) *(8 ** n)
+                n = n + 1
+                total = total + dec
+        tipo = "acabou"
+        print(total)
+
+#Conversão de hexadecimal para decimal:
+
+    while tipo == 'h':
+        for d in num[:: -1]:
+            if d == 'A' or d == 'a':
+                d = 10
+            elif d == 'B' or d == 'b':
+                d = 11
+            elif d == 'C' or d == 'c':
+                d = 12
+            elif d == 'D' or d == 'd':
+                d = 13
+            elif d == 'E' or d == 'e':
+                d = 14
+            elif d == 'F' or d == 'f':
+                d = 15 
+            dec = int(d) *(16 ** n)
+            n = n + 1
+            total = total + dec
+        tipo = "acabou"
+        print(total)
+    resp = input('Deseja continuar? s/n ')
